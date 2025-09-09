@@ -58,7 +58,7 @@ export default function App() {
           <li key={food.fdcId} className="p-4 border rounded-lg bg-white shadow">
             <h2 className="font-semibold">{food.description}</h2>
             <p className="text-sm text-gray-600">
-              Category: {food.foodCategory}
+              Category: {`${food.foodCategory} | Brand: ${food.brandOwner}`}
             </p>
             {food.foodNutrients && (
               <p className="mt-1 text-sm">
@@ -68,6 +68,12 @@ export default function App() {
                     ?.value
                 }{" "}
                 kcal
+                | Protein: {food.foodNutrients.find((n) => n.nutrientName === "Protein")?.value} g
+                | Carbohydrates: {food.foodNutrients.find((n) => n.nutrientName === "Carbohydrate, by difference")?.value} g
+                | Fat: {food.foodNutrients.find((n) => n.nutrientName === "Fatty acids, total saturated")?.value} g
+                | Fiber: {food.foodNutrients.find((n) => n.nutrientName === "Fiber, total dietary")?.value} g
+                | Sugar: {food.foodNutrients.find((n) => n.nutrientName === "Sugar, total")?.value} g
+                | Serving Size: {food.servingSize} {food.servingSizeUnit}
               </p>
             )}
           </li>
