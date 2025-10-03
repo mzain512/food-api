@@ -8,7 +8,8 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const API_KEY = "kbzaGb5rM5eeTj5c08ragH5tBqz9DO4aQ25jqnXD"; // 👈 replace with USDA API key
+  // Remove hardcoded token
+  const API_TOKEN = import.meta.env.VITE_WELLAGRAM_TOKEN;
 
   const searchFood = async (e) => {
     e.preventDefault();
@@ -19,11 +20,16 @@ export default function App() {
     setError("");
 
     try {
+      if (!API_TOKEN) {
+        setError("API token is missing. Please set VITE_WELLAGRAM_TOKEN in your environment variables.");
+        setLoading(false);
+        return;
+      }
       const res = await fetch(
         `https://api.dev.wellagram.com/api/analyze-text/`,
         {
           headers: {
-            'Authorization': `token a8f88222477aaf8b566eeb195f8b91df5a736e63`,
+            'Authorization': `token ${API_TOKEN}`,
             'Content-Type': 'application/json'
           },
           method: 'POST',
