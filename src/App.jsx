@@ -12,7 +12,11 @@ export default function App() {
   const API_TOKEN = import.meta.env.VITE_WELLAGRAM_TOKEN;
 
   const searchFood = async (e) => {
-    window.location.assign('supercal://authredirect?token=dummy');
+    const url = new URL(window.location.href);
+    console.log('URL :', url);
+    const redirect = url.searchParams.get("redirect"); 
+    console.log('Redirect :', redirect);
+    window.location.assign('exp://192.168.18.5:8082/authredirect?token=dummy');
     // e.preventDefault();
     // if (!query) return;
 
