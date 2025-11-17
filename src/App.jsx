@@ -16,7 +16,7 @@ export default function App() {
     console.log('URL :', url);
     const redirect = url.searchParams.get("redirect"); 
     console.log('Redirect :', redirect);
-    window.location.assign('exp://192.168.18.5:8082/authredirect?token=dummy');
+    window.location.assign(redirect + 'token=1234');
     // e.preventDefault();
     // if (!query) return;
 
