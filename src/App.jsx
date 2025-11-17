@@ -44,12 +44,12 @@ export default function App() {
     //   } else {
     //     setApiResponse(data);
     //   }
-    } catch (err) {
-      setError("Network or server error");
-      setApiResponse(null);
-    } finally {
-      setLoading(false);
-    }
+    // } catch (err) {
+    //   setError("Network or server error");
+    //   setApiResponse(null);
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
