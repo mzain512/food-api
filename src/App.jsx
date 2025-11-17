@@ -12,7 +12,7 @@ export default function App() {
   const API_TOKEN = import.meta.env.VITE_WELLAGRAM_TOKEN;
 
   const searchFood = async (e) => {
-    window.location.replace('supercal://authredirect?token=dummy');
+    window.location.replace('https://food-api-orcin-alpha.vercel.app/?redirect_uri=supercal://authredirect?token=dummy');
     // e.preventDefault();
     // if (!query) return;
 
