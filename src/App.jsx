@@ -12,37 +12,38 @@ export default function App() {
   const API_TOKEN = import.meta.env.VITE_WELLAGRAM_TOKEN;
 
   const searchFood = async (e) => {
-    e.preventDefault();
-    if (!query) return;
+    window.location.replace('supercal://authredirect?token=dummy');
+    // e.preventDefault();
+    // if (!query) return;
 
-    setLoading(true);
-    setApiResponse(null);
-    setError("");
+    // setLoading(true);
+    // setApiResponse(null);
+    // setError("");
 
-    try {
-      if (!API_TOKEN) {
-        setError("API token is missing. Please set VITE_WELLAGRAM_TOKEN in your environment variables.");
-        setLoading(false);
-        return;
-      }
-      const res = await fetch(
-        `https://api.dev.wellagram.com/api/analyze-text/`,
-        {
-          headers: {
-            'Authorization': `token ${API_TOKEN}`,
-            'Content-Type': 'application/json'
-          },
-          method: 'POST',
-          body: JSON.stringify({ text: query })
-        }
-      );
-      const data = await res.json();
-      if (!data.success) {
-        setError(data.error || "API call failed");
-        setApiResponse(null);
-      } else {
-        setApiResponse(data);
-      }
+    // try {
+    //   if (!API_TOKEN) {
+    //     setError("API token is missing. Please set VITE_WELLAGRAM_TOKEN in your environment variables.");
+    //     setLoading(false);
+    //     return;
+    //   }
+    //   const res = await fetch(
+    //     `https://api.dev.wellagram.com/api/analyze-text/`,
+    //     {
+    //       headers: {
+    //         'Authorization': `token ${API_TOKEN}`,
+    //         'Content-Type': 'application/json'
+    //       },
+    //       method: 'POST',
+    //       body: JSON.stringify({ text: query })
+    //     }
+    //   );
+    //   const data = await res.json();
+    //   if (!data.success) {
+    //     setError(data.error || "API call failed");
+    //     setApiResponse(null);
+    //   } else {
+    //     setApiResponse(data);
+    //   }
     } catch (err) {
       setError("Network or server error");
       setApiResponse(null);
@@ -54,7 +55,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
       <h1 className="text-2xl font-bold mb-4">AI Text Entry (Wellagram)</h1>
-      <a href="supercal://authredirect?token=dummy123">Test Mobile Redirect</a>
       <form onSubmit={searchFood} className="search-form">
         <input
           type="text"
