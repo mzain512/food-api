@@ -18,7 +18,7 @@ export default function App() {
     console.log('Redirect :', redirect);
     // window.alert(redirect)
     // window.location.replace(redirect);
-    window.open(redirect, '_blank');
+    window.open(redirect + '?token=abc123', '_blank');
     // e.preventDefault();
     // if (!query) return;
 
