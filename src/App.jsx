@@ -60,6 +60,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
       <h1 className="text-2xl font-bold mb-4">AI Text Entry (Wellagram)</h1>
+      <a href='supercal://authredirect?token=dummy'>Test Mobile Redirect</a>
       <form onSubmit={searchFood} className="search-form">
         <input
           type="text"
