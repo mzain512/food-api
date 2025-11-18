@@ -16,8 +16,8 @@ export default function App() {
     console.log('URL :', url);
     const redirect = url.searchParams.get("redirect_uri"); 
     console.log('Redirect :', redirect);
-    window.alert(redirect)
-    window.location.assign(redirect + '?token=1234');
+    // window.alert(redirect)
+    window.location.assign(redirect);
     // e.preventDefault();
     // if (!query) return;
 
