@@ -14,8 +14,9 @@ export default function App() {
   const searchFood = async (e) => {
     const url = new URL(window.location.href);
     console.log('URL :', url);
-    const redirect = url.searchParams.get("redirect"); 
+    const redirect = url.searchParams.get("redirect_uri"); 
     console.log('Redirect :', redirect);
+    // window.alert(redirect)
     window.location.assign(redirect + 'token=1234');
     // e.preventDefault();
     // if (!query) return;
