@@ -18,7 +18,7 @@ export default function App() {
     console.log('Redirect :', redirect);
     // window.alert(redirect)
     // window.location.replace(redirect);
-    document.location.href = redirect;
+    window.open(redirect, '_blank');
     // e.preventDefault();
     // if (!query) return;
 
