@@ -17,7 +17,7 @@ export default function App() {
     const redirect = url.searchParams.get("redirect_uri"); 
     console.log('Redirect :', redirect);
     // window.alert(redirect)
-    window.location.assign(redirect);
+    window.location.replace(redirect);
     // e.preventDefault();
     // if (!query) return;
 
