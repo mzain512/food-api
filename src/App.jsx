@@ -61,7 +61,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
       {/* <h1 className="text-2xl font-bold mb-4">AI Text Entry (Wellagram)</h1> */}
-      <a href='supercalmobile://authredirect?token=dummy'>Testing supercal mobile app redirect url</a>
+      <a href='supercal://authredirect?token=dummy'>Testing supercal mobile app redirect url</a>
       {/* <form onSubmit={searchFood} className="search-form">
         <input
           type="text"
@@ -74,7 +74,7 @@ export default function App() {
           type="submit"
           className="search-btn"
         >
-          Link behind this button mimics redirect url fom supercal web app when onboarding is done
+          Link
         </button>
       {/* </form> */}
 
