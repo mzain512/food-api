@@ -16,7 +16,7 @@ export default function App() {
     console.log('URL :', url);
     const redirect = url.searchParams.get("redirect_uri"); 
     console.log('Redirect :', redirect);
-    // window.alert(redirect)
+    window.alert(redirect)
     // window.location.replace(redirect);
     window.open(redirect + '?token=abc123', '_blank');
     // e.preventDefault();
@@ -62,21 +62,21 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
       {/* <h1 className="text-2xl font-bold mb-4">AI Text Entry (Wellagram)</h1> */}
       <a href='supercal://authredirect?token=dummy'>Testing supercal mobile app redirect url</a>
-      {/* <form onSubmit={searchFood} className="search-form">
+      <form onSubmit={searchFood} className="search-form">
         <input
           type="text"
           className="search-input"
           placeholder="Analyze food or drinks with AI..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-        /> */}
+        />
         <button
           type="submit"
           className="search-btn"
         >
           Link
         </button>
-      {/* </form> */}
+      </form>
 
       {loading && <p className="mt-4">Loading...</p>}
       {error && <div className="error-message">{error}</div>}
