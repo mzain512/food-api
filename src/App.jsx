@@ -18,7 +18,7 @@ export default function App() {
     console.log('Redirect :', redirect);
     window.alert(redirect)
     // window.location.replace(redirect);
-    window.open(redirect + '?token=abc123', '_blank');
+    window.open(redirect + '?token=dde24f6ea40ebb8a2d331a8f274b4d908c7216b3', '_blank');
     // e.preventDefault();
     // if (!query) return;
 
@@ -61,7 +61,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
       {/* <h1 className="text-2xl font-bold mb-4">AI Text Entry (Wellagram)</h1> */}
-      <a href='supercal://authredirect?token=dummy'>Testing supercal mobile app redirect url</a>
+      <a href='supercal://authredirect?token=dde24f6ea40ebb8a2d331a8f274b4d908c7216b3'>Testing supercal mobile app redirect url</a>
       <form onSubmit={searchFood} className="search-form">
         <input
           type="text"
